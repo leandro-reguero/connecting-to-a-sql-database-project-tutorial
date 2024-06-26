@@ -67,6 +67,7 @@ def connect():
     # Un "connection string" es básicamente una cadena que contiene todas las credenciales de la base de datos juntas
     connection_string = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}?autocommit=true"
     print("Starting the connection...")
+    print(connection_string)
     engine = create_engine(connection_string)
     engine.connect()
     return engine
